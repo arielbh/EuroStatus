@@ -1,0 +1,25 @@
+@{
+    ViewBag.Title = "Welcome to Euro2012 Score Status";
+}
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+        </hgroup>
+    </div>
+</section>
+}
+<div data-bind="if: nav.params().view == 'table'">
+    @Html.Partial("_Table")
+</div>
+
+<div data-bind="with: currentPlayer">
+    @Html.Partial("_PlayerDetails")
+</div>
+
+
+
+<script src="../../App/MainViewModel.js" type="text/javascript"></script>
+<script src="../../App/App.js" type="text/javascript"></script>
